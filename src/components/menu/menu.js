@@ -40,12 +40,17 @@ const menuMaker = (data) => {
   let ul = document.createElement('ul')
 
   menu.classList.add('menu')
-  menu.style.display = 'block';
+  menu.style.display = 'inline';
 
   menu.appendChild(ul)
   data.forEach((field) => {
     let li = document.createElement('li');
     li.textContent = field;
+    li.classList.add('menu-button');
+
+    li.addEventListener('click', event => {
+      event.target.classList.toggle('menu--open')
+    })
     ul.appendChild(li)
   })
 
