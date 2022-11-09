@@ -34,18 +34,21 @@ let menuItems = [
 */
 
 const header = document.querySelector('.header');
-console.log(header)
 
 const menuMaker = (data) => {
   let menu = document.createElement('div');
   let ul = document.createElement('ul')
+
   menu.classList.add('menu')
+  menu.style.display = 'block';
+
   menu.appendChild(ul)
   data.forEach((field) => {
     let li = document.createElement('li');
     li.textContent = field;
     ul.appendChild(li)
   })
+
   return menu;
 }
 
